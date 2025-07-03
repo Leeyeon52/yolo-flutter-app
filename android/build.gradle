@@ -119,14 +119,15 @@ android {
         testImplementation("org.mockito:mockito-core:5.0.0")
     }
 
+    // *** 이 testOptions 블록이 android 블록 안에 있어야 합니다. ***
     testOptions {
         unitTests.all {
             useJUnitPlatform()
 
             testLogging {
-               events "passed", "skipped", "failed", "standardOut", "standardError"
-               outputs.upToDateWhen {false}
-               showStandardStreams = true
+                events "passed", "skipped", "failed", "standardOut", "standardError"
+                outputs.upToDateWhen {false}
+                showStandardStreams = true
             }
         }
     }
